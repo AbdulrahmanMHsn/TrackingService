@@ -11,7 +11,7 @@ class FirebaseUtils {
     private lateinit var firebaseDB: FirebaseDatabase
     private lateinit var reference: DatabaseReference
 
-    
+
     companion object {
         private var firebaseUtils: FirebaseUtils? = null
 

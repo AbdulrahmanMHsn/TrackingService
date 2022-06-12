@@ -9,7 +9,7 @@ class TrackingService : Service() {
 
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        setupForegroundService("hH")
+        setupForegroundService()
 
         uploadLocationToFirebase()
 
@@ -17,10 +17,10 @@ class TrackingService : Service() {
     }
 
 
-    private fun setupForegroundService(body: String) {
+    private fun setupForegroundService() {
         val notification = NotificationHelper(this).getNotificationBuilder(
-            title = "Nour",
-            msg = body,
+            title = "Voooo",
+            msg = "",
             isOngoing = false,
             isSilent = false,
             Intent(this,MainActivity::class.java)

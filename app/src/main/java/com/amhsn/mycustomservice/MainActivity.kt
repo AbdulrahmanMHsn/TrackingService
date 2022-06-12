@@ -2,9 +2,8 @@ package com.amhsn.mycustomservice
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.work.OneTimeWorkRequest
+import androidx.appcompat.app.AppCompatActivity
 import androidx.work.WorkManager
 import com.amhsn.mycustomservice.databinding.ActivityMainBinding
 
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnStop.setOnClickListener {
-
+            stopService()
         }
 
     }
@@ -40,5 +39,11 @@ class MainActivity : AppCompatActivity() {
         } else {
             startService(gattServiceIntent)
         }
+    }
+
+    private fun stopService() {
+        val gattServiceIntent = Intent(this, TrackingService::class.java)
+
+        stopService(gattServiceIntent)
     }
 }
